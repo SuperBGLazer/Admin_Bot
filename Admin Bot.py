@@ -59,4 +59,4 @@ async def on_message(message):
 print("Connected To Discord!")
 
 client.loop.create_task(update_stats())
-client.run('NjE5MzA1MDE3ODYxNzM0NDAx.XXKyiA.EEF3_t1dhcYSfZUiccjwuaTFcZ4')
+client.run('')
