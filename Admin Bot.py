@@ -1,3 +1,5 @@
+import os
+
 import discord
 import time
 import asyncio
@@ -59,4 +61,4 @@ async def on_message(message):
 print("Connected To Discord!")
 
 client.loop.create_task(update_stats())
-client.run('')
+client.run(client.run(os.environ['TOKEN']))
