@@ -1,10 +1,5 @@
 import os
-
 import discord
-import time
-import asyncio
-
-from discord.ext.commands import bot
 
 messages = joined = 0
 
@@ -18,22 +13,7 @@ def read_token():
 client = discord.Client()
 
 
-async def update_stats():
-    await client.wait_until_ready()
-    global messages, joined
 
-    while not client.is_closed():
-        try:
-            with open("stats.txt", "a") as f:
-                f.write(f"Time: {int(time.time())}, Messages: {messages}, Members Joined: {joined}\n")
-
-            messages = 0
-            joined = 0
-
-            await asyncio.sleep(5)
-        except Exception as e:
-            print(e)
-            await asyncio.sleep(5)
 
 
 @client.event
@@ -63,6 +43,4 @@ async def on_message(message):
     ...
 
 print("Connected To Discord!")
-
-client.loop.create_task(update_stats())
 client.run(client.run(os.environ['TOKEN']))
