@@ -34,6 +34,8 @@ async def on_message(message):
     elif message.content == "!users":
         await message.channel.send(f" Number of Members: {id.member_count}")
         print(f"""{message.author} Asked for users""")
+    elif message.content == "GitHub":
+        await  message.channel.send(f"This is are GitHub Bot https://github.com/Gunn1/Admin_Bot")
     ...
     if message.content == "!help":
         embed = discord.Embed(title="Admin Bot", description="Some useful commands")
