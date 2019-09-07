@@ -37,15 +37,17 @@ async def on_message(message):
     elif message.content == "GitHub":
         await  message.channel.send(f"This is are GitHub Bot https://github.com/Gunn1/Admin_Bot")
         print(f"{message.author} Just typed GitHub")
-
     elif message.content == "^help":
         embed = discord.Embed(title="Admin Bot", description="Some useful commands")
         embed.add_field(name="^hello", value="Greets the user")
         embed.add_field(name="^users", value="Prints number of users")
+        embed.add.field(name="^welcome", value="Welcome People")
         await message.channel.send(content=None, embed=embed)
-
+    elif message.content == "^welcome":
+        await  message.channel.send("Welcome All")
     elif "^" in message.content:
         await message.channel.send("Sorry I do not now that.")
+
 
 
 
