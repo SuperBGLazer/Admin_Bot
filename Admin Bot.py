@@ -28,13 +28,12 @@ async def on_member_join(member):
 async def on_message(message):
     id = client.get_guild(592447508219953163)
     if message.content.find("^hello") != -1:
-        message.author == message.author
         await message.channel.send(f"Hello {message.author}")
         print(f" {message.author} Said Hello")
     elif message.content == "^users":
         await message.channel.send(f" Number of Members: {id.member_count}")
         print(f"""{message.author} Asked for users""")
-    elif message.content == "GitHub":
+    elif message.content == "^bot":
         await  message.channel.send(f"This is are GitHub Bot https://github.com/Gunn1/Admin_Bot")
         print(f"{message.author} Just typed GitHub")
     elif message.content == "^help":
@@ -47,7 +46,7 @@ async def on_message(message):
     elif message.content == "^welcome":
         await message.channel.send("Welcome All")
     elif "^" in message.content:
-        await message.channel.send("Sorry I do not now that.")
+        await message.channel.send("Sorry I do not know that.")
 
 
 
