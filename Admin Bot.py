@@ -51,7 +51,7 @@ async def on_message(message):
         print("User Said Hello")
         await message.channel.send(f"Hello {message.auther}")
     elif message.content == "!users":
-        await message.channel.send(f" Number of Members: {message.auther}")
+        await message.channel.send(f" Number of Members: {id.member_count}")
         print(f""" Asked for !user""")
     ...
     if message.content == "!help":
