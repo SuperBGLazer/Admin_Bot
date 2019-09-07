@@ -4,6 +4,8 @@ import discord
 import time
 import asyncio
 
+from discord.ext.commands import bot
+
 messages = joined = 0
 
 
@@ -39,17 +41,18 @@ async def on_member_join(member):
     global joined
     joined += 1
     if joined == 1:
-        await client.send_message(f"""Welcome to the server {member.mention}""")
+        await client.send_message(f"""Welcome to the server {discord.member.mention}""")
+
 
 @client.event
 async def on_message(message):
     id = client.get_guild(592447508219953163)
     if message.content.find("!hello") != -1:
         print("User Said Hello")
-        await message.channel.send("Hello")
+        await message.channel.send(f"Hello {message.auther}")
     elif message.content == "!users":
-        print("User Asked for !user")
-        await message.channel.send(f""" Number of Members: {id.member_count}""")
+        await message.channel.send(f" Number of Members: {message.auther}")
+        print(f""" Asked for !user""")
     ...
     if message.content == "!help":
         embed = discord.Embed(title="Admin Bot", description="Some useful commands")
