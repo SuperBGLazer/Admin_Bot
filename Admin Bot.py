@@ -42,6 +42,7 @@ async def on_message(message):
         embed.add_field(name="^hello", value="Greets the user")
         embed.add_field(name="^users", value="Prints number of users")
         embed.add.field(name="^welcome", value="Welcome People")
+        embed.add.field(name="GitHub", value="GitHub bot")
         await message.channel.send(content=None, embed=embed)
     elif message.content == "^welcome":
         await message.channel.send("Welcome All")
