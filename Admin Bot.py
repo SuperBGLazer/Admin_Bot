@@ -23,8 +23,7 @@ async def on_member_join(member):
 
 @client.event
 async def on_message(message):
-    # id = client.get_guild(592447508219953163)
-    id = client.get_guild(os.environ['CLIENT_ID'])
+    id = client.get_guild(592447508219953163)
     if "^" in message.content:
         found = False
         if "^hello" in message.content:
