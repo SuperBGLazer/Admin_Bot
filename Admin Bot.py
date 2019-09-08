@@ -33,6 +33,7 @@ async def on_message(message):
         if "^users" in message.content:
             await message.channel.send(f" Number of Members: {id.member_count}")
             print(f"""{message.author} Asked for users""")
+            found = True
         if message.content == "^bot":
             await message.channel.send(f"Here is my source code https://github.com/Gunn1/Admin_Bot")
             print(f"{message.author} Just typed GitHub")
