@@ -35,8 +35,8 @@ async def on_message(message):
             print(f"""{message.author} Asked for users""")
             found = True
         if message.content == "^bot":
-            await message.channel.send(f"Here is my source code https://github.com/Gunn1/Admin_Bot")
-            print(f"{message.author} Just typed GitHub")
+            await message.channel.send("Here is my source code https://github.com/Gunn1/Admin_Bot")
+            print(f"{message.author} Just typed ^bot")
             found = True
         if "^help" in message.content:
             embed = discord.Embed(title="Admin Bot", description="Some useful commands")
