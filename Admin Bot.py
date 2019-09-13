@@ -1,13 +1,8 @@
 import os
+
 import discord
 
 messages = joined = 0
-
-
-def read_token():
-    with open("token.txt", "r") as f:
-        lines = f.readlines()
-        return lines[0].strip()
 
 
 client = discord.Client()
@@ -23,7 +18,6 @@ async def on_member_join(member):
 
 @client.event
 async def on_message(message):
-    # id = client.get_guild(592447508219953163)
     id = client.get_guild(os.environ['CLIENT_ID'])
     if "^" in message.content:
         found = False
