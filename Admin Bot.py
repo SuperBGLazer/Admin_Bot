@@ -2,6 +2,8 @@ import os
 
 import discord
 
+import Command
+
 messages = joined = 0
 
 
@@ -13,7 +15,7 @@ async def on_member_join(member):
     global joined
     joined += 1
     if joined == 1:
-        await client.send_message(f"""Welcome to the server {discord.member.mention}""")
+        await client.send_message(f"Welcome to the server {discord.member.mention}")
 
 
 @client.event
@@ -70,6 +72,8 @@ async def on_message(message):
                 if message.content[pos + 1] != " ":
                     await message.channel.send("Sorry I do not know that.")
 
+def register_command(command, message):
+    Command.commands.add(Command.Command(command, message))
 
 print("Connected To Discord!")
 client.run(client.run(os.environ['TOKEN']))
